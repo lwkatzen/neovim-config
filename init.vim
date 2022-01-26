@@ -1,3 +1,6 @@
+" display numbers by default
+set number
+
 " set tab stops every 4 spaces and set shiftwidth 4 spaces
 set ts=4 sw=4
 
