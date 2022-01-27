@@ -44,7 +44,9 @@ Plug 'KeitaNakamura/tex-conceal.vim'
     let g:tex_conceal='abdmg'
     hi Conceal ctermbg=none
 
-Plug 'arcticicestudio/nord-vim'
-    colorscheme nord
+
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 call plug#end()
+
+runtime linux-config/init-linux.vim
