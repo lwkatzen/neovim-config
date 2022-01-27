@@ -1,3 +1,10 @@
+# used to define contexts
+global !p
+def math():
+    return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+endglobal
+
 # display today's date
 snippet today "Date"
 `date +%F`
@@ -16,8 +23,15 @@ snippet beg "begin{} / end{}" bA
 endsnippet
 
 # begin theorem environment
-snippet thm "begin theorem environment" bA
+snippet fthm "begin theorem environment" bA
 \begin{$1}[$2]\label{$3}
+	$0
+\end{$1}
+endsnippet
+
+# begin theorem environment
+snippet thm "begin theorem environment" bA
+\begin{$1}\label{$3}
 	$0
 \end{$1}
 endsnippet
@@ -59,9 +73,27 @@ snippet td "superscript" iA
 ^{$1}$0
 endsnippet
 
+# overline in math mode
+context "math()"
+snippet ol "overline" iA
+\\ol{$1}$0
+endsnippet
+
+# \{ ... \} curly bracket combo in math mode
+context "math()"
+snippet prn "\{...\}" iA
+\\{$1\\}$0
+endsnippet
+
+# \{ ... \} curly bracket combo in math mode with \left ... \right
+context "math()"
+snippet lrprn "\{...\}" iA
+\\left\\{$1\\}\\right$0
+endsnippet
+
 # left ... right delimiter snippet
 snippet \left "\left ... \right" w
-\left$1 $2 \right$1 $0
+\\left$1 $2 \\right$1 $0
 endsnippet
 
 # basic fraction
