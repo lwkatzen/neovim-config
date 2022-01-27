@@ -1,3 +1,6 @@
+" display numbers by default
+set number
+
 " set tab stops every 4 spaces and set shiftwidth 4 spaces
 set ts=4 sw=4
 
@@ -34,6 +37,7 @@ Plug 'lervag/vimtex'
     let g:tex_flavor='latex'
     let g:vimtex_view_method='zathura'
     let g:vimtex_quickfix_mode=0
+	let g:latex_view_general_viewer = 'zathura'
 
 Plug 'KeitaNakamura/tex-conceal.vim'
     set conceallevel=1
