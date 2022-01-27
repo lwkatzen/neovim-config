@@ -44,9 +44,6 @@ Plug 'KeitaNakamura/tex-conceal.vim'
     let g:tex_conceal='abdmg'
     hi Conceal ctermbg=none
 
-Plug 'arcticicestudio/nord-vim'
-    colorscheme nord
-
 call plug#end()
 
 runtime mac-config/init-mac.vim
