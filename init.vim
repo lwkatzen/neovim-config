@@ -44,3 +44,5 @@ Plug 'arcticicestudio/nord-vim'
     colorscheme nord
 
 call plug#end()
+
+runtime mac-config/init-mac.vim
