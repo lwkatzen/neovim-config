@@ -36,6 +36,20 @@ snippet thm "begin theorem environment" bA
 \end{$1}
 endsnippet
 
+# begin enumerate environment
+snippet enum "begin enumerate environment" bA
+\begin{enumerate}[$1]
+	$0
+\end{enumerate}
+endsnippet
+
+# begin itemize environment
+snippet itemize "begin enumerate environment" bA
+\begin{itemize}
+	$0
+\end{itemize}
+endsnippet
+
 # inline display math
 snippet mk "Math" wA
 $${1}$`!p
@@ -50,7 +64,7 @@ endsnippet
 snippet dm "Math" wA
 \begin{align*}
 	$1
-\end{align*} $0
+\end{align*}$0
 endsnippet
 
 # subscript 1 digit
@@ -79,21 +93,30 @@ snippet ol "overline" iA
 \\ol{$1}$0
 endsnippet
 
-# \{ ... \} curly bracket combo in math mode
+# inner product snippet
 context "math()"
-snippet prn "\{...\}" iA
+snippet inp "inner product<-,->" iA
+\\langle $1,$2\\rangle$0
+endsnippet
+
+# \left(...\right)
+context "math()"
+snippet par "\left(...\right)" iA
+\\left($1\\right)$0
+endsnippet
+
+# { ... } curly brackets combo in math mode with \left ... \right
+context "math()"
+priority 1000
+snippet lcbr "\{ ... \}" iA
+\\left\\{$1\\right\\} $0
+endsnippet
+
+# { ... } curly brackets combo in math mode
+priority 900
+context "math()"
+snippet cbr "\{...\}" iA
 \\{$1\\}$0
-endsnippet
-
-# \{ ... \} curly bracket combo in math mode with \left ... \right
-context "math()"
-snippet lrprn "\{...\}" iA
-\\left\\{$1\\}\\right$0
-endsnippet
-
-# left ... right delimiter snippet
-snippet \left "\left ... \right" w
-\\left$1 $2 \\right$1 $0
 endsnippet
 
 # basic fraction
@@ -102,15 +125,15 @@ snippet // "Fraction" iA
 endsnippet
 
 # advanced fraction with regex
-snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
-\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wr
+\\frac{`!p snip.rv  = match.group(1)`}{$1}$0
 endsnippet
 
 # advanced fraction with parentheses matching
 priority 1000
-snippet '^.*\)/' "() Fraction" wrA
+snippet '^.*\)/' "() Fraction" wr
 `!p
-stripped = match.string[:-1]
+stripped  = match.string[:-1]
 depth = 0
 i = len(stripped) - 1
 while True:
@@ -118,7 +141,7 @@ while True:
 	if stripped[i] == '(': depth -= 1
 	if depth == 0: break;
 	i -= 1
-snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+snip.rv = stripped[0:i] + "\\frac{" + stripped[i +1:-1] + "}"
 `{$1}$0
 endsnippet
 
