@@ -30,4 +30,10 @@ Noether
 semigroup
 coprime
 squarefree
+<<<<<<< HEAD
 >>>>>>> c0fe61f4a87be278816852cb61bdf7a25aefb58b
+=======
+sofic
+pointwise
+monoid
+>>>>>>> e8f6571bf26f5ad423b43a0c4eabcaea1baf8ff0

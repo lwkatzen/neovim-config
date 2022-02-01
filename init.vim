@@ -1,6 +1,9 @@
 " display numbers by default
 set number
 
+" keep cushion of lines above and below cursor
+set scrolloff=7
+
 " set tab stops every 4 spaces and set shiftwidth 4 spaces
 set ts=4 sw=4
 
@@ -8,7 +11,7 @@ set ts=4 sw=4
 set breakindent
 
 " indent by an additional 2 characters on wrapped lines, when line >= 40 characters, put 'showbreak' at start of line
-set breakindentopt=shift:2,min:40,sbr
+set breakindentopt=shift:0,min:40,sbr
 
 " append '>>' to indent
 set showbreak=>>   
@@ -38,12 +41,22 @@ Plug 'lervag/vimtex'
     let g:vimtex_view_method='zathura'
     let g:vimtex_quickfix_mode=0
 	let g:latex_view_general_viewer = 'zathura'
+	let g:vimtex_view_forward_search_on_start=0
 
 Plug 'KeitaNakamura/tex-conceal.vim'
     set conceallevel=1
     let g:tex_conceal='abdmg'
     hi Conceal ctermbg=none
 
+<<<<<<< HEAD
 call plug#end()
 
 runtime mac-config/init-mac.vim
+=======
+
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+
+call plug#end()
+
+runtime linux-config/init-linux.vim
+>>>>>>> e8f6571bf26f5ad423b43a0c4eabcaea1baf8ff0
