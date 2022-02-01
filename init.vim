@@ -48,15 +48,26 @@ Plug 'KeitaNakamura/tex-conceal.vim'
     let g:tex_conceal='abdmg'
     hi Conceal ctermbg=none
 
-<<<<<<< HEAD
-call plug#end()
-
-runtime mac-config/init-mac.vim
-=======
-
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 call plug#end()
 
+" ensure true colors turned on (256 bit)
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+" color scheme settings
+syntax on
+set t_Co=256
+set cursorline
+colorscheme onehalflight
+let g:airline_theme='onehalfdark'
+" lightline
+" let g:lightline = { 'colorscheme': 'onehalfdark' }
+
+" linux and mac specific config files, ignored by git
+runtime mac-config/init-mac.vim
 runtime linux-config/init-linux.vim
->>>>>>> e8f6571bf26f5ad423b43a0c4eabcaea1baf8ff0
