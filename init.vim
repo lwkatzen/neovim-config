@@ -48,6 +48,10 @@ Plug 'KeitaNakamura/tex-conceal.vim'
     let g:tex_conceal='abdmg'
     hi Conceal ctermbg=none
 
+" solely used for syntax highliting in sxhkd configuration files
+Plug 'kovetskiy/sxhkd-vim'
+
+" color scheme
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 call plug#end()

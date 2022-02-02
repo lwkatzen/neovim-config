@@ -67,6 +67,20 @@ snippet dm "Math" wA
 \end{align*}$0
 endsnippet
 
+# displayed math
+snippet eqn "Numbered equation" bA
+\begin{equation}\label{eqn:$1}
+	$2
+\end{equation}$0
+endsnippet
+
+# snippet for making an array environment quickly
+snippet array "Array environment" wA
+\\begin{array}{$1}
+	$2
+\\end{array}$0
+endsnippet
+
 # subscript 1 digit
 snippet '([A-Za-z])(\d)' "auto subscript" wrA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
@@ -99,6 +113,20 @@ snippet inp "inner product<-,->" iA
 \\langle $1,$2\\rangle$0
 endsnippet
 
+# angle bracket snippet with \left \right
+context "math()"
+priority 1000
+snippet lang "\left\langle ... \right\rangle" iA
+\\left\\langle $1 \\right\\rangle$0
+endsnippet
+
+# angle bracket snippet
+context "math()"
+priority 900
+snippet ang "\langle ... \rangle" iA
+\\langle $1 \\rangle$0
+endsnippet
+
 # \left(...\right)
 context "math()"
 snippet par "\left(...\right)" iA
@@ -117,6 +145,12 @@ priority 900
 context "math()"
 snippet cbr "\{...\}" iA
 \\{$1\\}$0
+endsnippet
+
+# text in math mode
+context "math()"
+snippet text "\text{...}" iA
+\\text{$1}$0
 endsnippet
 
 # basic fraction
