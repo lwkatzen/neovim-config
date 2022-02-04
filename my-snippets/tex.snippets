@@ -79,6 +79,12 @@ snippet eqn "Numbered equation" bA
 \end{equation}$0
 endsnippet
 
+# snippet for a matrix
+context "math()"
+snippet mtx "Matrix" wA
+\begin{pmatrix}	$1 \end{pmatrix}$0
+endsnippet
+
 # snippet for making an array environment quickly
 snippet array "Array environment" wA
 \\begin{array}{$1}
@@ -87,6 +93,7 @@ snippet array "Array environment" wA
 endsnippet
 
 # subscript 1 digit
+context "math()"
 snippet '([A-Za-z])(\d)' "auto subscript" wrA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 endsnippet
@@ -104,12 +111,6 @@ endsnippet
 # superscripts
 snippet td "superscript" iA
 ^{$1}$0
-endsnippet
-
-# overline in math mode
-context "math()"
-snippet ol "overline" iA
-\\ol{$1}$0
 endsnippet
 
 # inner product snippet
@@ -149,7 +150,7 @@ endsnippet
 priority 900
 context "math()"
 snippet cbr "\{...\}" iA
-\\{$1\\}$0
+\\{$1\\}$ 0
 endsnippet
 
 # text in math mode
