@@ -48,6 +48,9 @@ Plug 'KeitaNakamura/tex-conceal.vim'
     let g:tex_conceal='abdmg'
     hi Conceal ctermbg=none
 
+" for code completion and LPS stuff
+Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
+
 " solely used for syntax highliting in sxhkd configuration files
 Plug 'kovetskiy/sxhkd-vim'
 
