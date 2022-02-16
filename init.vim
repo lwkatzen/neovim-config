@@ -49,7 +49,7 @@ Plug 'KeitaNakamura/tex-conceal.vim'
     hi Conceal ctermbg=none
 
 " for code completion and LPS stuff
-Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
+" Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
 
 " solely used for syntax highliting in sxhkd configuration files
 Plug 'kovetskiy/sxhkd-vim'
