@@ -36,9 +36,15 @@ endsnippet
 
 # begin theorem environment
 snippet thm "begin theorem environment" bA
-\begin{$1}\label{$3}
+\begin{$1}\label{$2}
+	$3
+\end{$1}$0
+endsnippet
+
+snippet defn "begin theorem environment" bA
+\begin{defn}\label{defn:$1}
 	$0
-\end{$1}
+\end{defn}
 endsnippet
 
 # begin enumerate environment
@@ -56,10 +62,11 @@ snippet itemize "begin enumerate environment" bA
 endsnippet
 
 # inline display math
+# attempt to be smart adds unwanted spaces when multiple $ $ used in one line
 snippet mk "Math" wA
 $${1}$`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
-    snip.rv = ' '
+    snip.rv = '' # replace with ' ' to return to original
 else:
     snip.rv = ''
 `$2
@@ -116,12 +123,12 @@ endsnippet
 # inner product snippet
 context "math()"
 snippet inp "inner product<-,->" iA
-\\langle $1,$2\\rangle$0
+\\langle $1 \\rangle$0
 endsnippet
 
 # angle bracket snippet with \left \right
 context "math()"
-priority 1000
+ priority 1000
 snippet lang "\left\langle ... \right\rangle" iA
 \\left\\langle $1 \\right\\rangle$0
 endsnippet
@@ -174,7 +181,7 @@ priority 1000
 snippet '^.*\)/' "() Fraction" wr
 `!p
 stripped  = match.string[:-1]
-depth = 0
+depth  = 0
 i = len(stripped) - 1
 while True:
 	if stripped[i] == ')': depth += 1
