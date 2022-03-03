@@ -20,6 +20,11 @@ snippet bf "bold" wA
 \textbf{$1}$0
 endsnippet
 
+# make quotes easier
+snippet quo "quote" w
+\`\`$1''$0
+endsnippet
+
 # begin block at start of line
 snippet beg "begin{} / end{}" bA
 \begin{$1}
@@ -90,6 +95,12 @@ endsnippet
 context "math()"
 snippet mtx "Matrix" wA
 \begin{pmatrix}	$1 \end{pmatrix}$0
+endsnippet
+
+# snippet for quick isomorphism map
+context "math()"
+snippet iso "isomorphism" wA
+\to{\sim}
 endsnippet
 
 # snippet for making an array environment quickly
