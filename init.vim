@@ -55,7 +55,7 @@ Plug 'KeitaNakamura/tex-conceal.vim'
 Plug 'kovetskiy/sxhkd-vim'
 
 " color scheme
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 call plug#end()
 
@@ -78,4 +78,4 @@ call plug#end()
 
 " linux and mac specific config files, ignored by git
 runtime mac-config/init-mac.vim
-runtime linux-config/init-linux.vim
+" runtime linux-config/init-linux.vim

@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/lwkatzen/.config/nvim'
+let g:netrw_dirhist_9='/home/lwkatzen/.config/nvim/linux-config'
 let g:netrw_dirhist_8='/home/lwkatzen/Desktop/university/bib'
 let g:netrw_dirhist_7='/home/lwkatzen/Desktop/university'
 let g:netrw_dirhist_6='/home/lwkatzen/Desktop/university/masters'
