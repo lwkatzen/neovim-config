@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/lwkatzen/Desktop/university/bib'
 let g:netrw_dirhist_0='/home/lwkatzen/.config/nvim'
 let g:netrw_dirhist_9='/home/lwkatzen/.config/nvim/linux-config'
 let g:netrw_dirhist_8='/home/lwkatzen/Desktop/university/bib'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_5='/home/lwkatzen/.config/nvim'
 let g:netrw_dirhist_4='/home/lwkatzen/Desktop/university/style-sheets'
 let g:netrw_dirhist_3='/home/lwkatzen/.config/nvim/linux-config'
 let g:netrw_dirhist_2='/home/lwkatzen/.config/nvim/my-snippets'
-let g:netrw_dirhist_1='/home/lwkatzen/Desktop/School/LaTeX/style-sheets'
