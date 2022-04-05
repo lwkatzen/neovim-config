@@ -27,6 +27,7 @@ hi SpellBad cterm=underline,bold ctermfg=red
 call plug#begin()
 
 Plug 'jiangmiao/auto-pairs'
+    let g:AutoPairs={'(':')', '[':']', '{':'}','"':'"', '`':'`'}
 
 Plug 'SirVer/ultisnips'   
     let g:UltiSnipsExpandTrigger = '<tab>'
@@ -41,7 +42,8 @@ Plug 'lervag/vimtex'
     let g:vimtex_view_method='zathura'
     let g:vimtex_quickfix_mode=0
 	let g:latex_view_general_viewer = 'zathura'
-	let g:vimtex_view_forward_search_on_start=0
+	let g:vimtex_view_forward_search_on_start=1
+	let g:vimtex_complete_enabled=1
 
 Plug 'KeitaNakamura/tex-conceal.vim'
     set conceallevel=1
