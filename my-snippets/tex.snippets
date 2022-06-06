@@ -16,7 +16,7 @@ snippet em "emphasize" w
 endsnippet
 
 # bold command
-snippet bf "bold" wA
+snippet bf "bold" w
 \textbf{$1}$0
 endsnippet
 
@@ -150,6 +150,12 @@ snippet par "\left(...\right)" i
 \\left($1\\right)$0
 endsnippet
 
+# \left(...\right)
+context "math()"
+snippet sqb "\left(...\right)" i
+\\left[$1\\right]$0
+endsnippet
+
 # { ... } curly brackets combo in math mode with \left ... \right
 context "math()"
 priority 1000
@@ -166,7 +172,7 @@ endsnippet
 
 # text in math mode
 context "math()"
-snippet text "\text{...}" iA
+snippet text "\text{...}" i
 \\text{$1}$0
 endsnippet
 
